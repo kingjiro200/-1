@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิทยาศาสตร์ ม.6</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+            color: #F8F9FA;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            animation: glowHeader 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowHeader {
+            from {
+                text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 105, 180, 1);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(44, 44, 44, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+            text-align: center;
+            animation: glowContainer 2s infinite alternate;
+        }
+
+        @keyframes glowContainer {
+            from {
+                box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(255, 105, 180, 0.7);
+            }
+        }
+
+        h2 {
+            color: #A8E6CF;
+            text-shadow: 0 0 10px rgba(168, 230, 207, 0.7);
+        }
+
+        p {
+            font-size: 18px;
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+
+        .video-container {
+            margin-top: 30px;
+            background: #212121;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #388E3C;
+            color: white;
+            font-size: 18px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 0 20px rgba(168, 230, 207, 0.5);
+        }
+
+        .section {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        วิทยาศาสตร์ ม.6
+    </div>
+
+    <div class="container">
+        <h2>เริ่มต้นการเรียนรู้วิทยาศาสตร์ ม.6</h2>
+        <p>ในระดับ ม.6 นี้ เราจะเรียนรู้เกี่ยวกับหัวข้อที่มีความสำคัญมากขึ้นในการเตรียมตัวสำหรับการสอบและการศึกษาต่อในสาขาวิทยาศาสตร์.</p>
+    </div>
+
+    <!-- หัวข้อฟิสิกส์ -->
+    <div class="container section">
+        <h2>ฟิสิกส์</h2>
+        <p>เรียนรู้เกี่ยวกับไฟฟ้า, แมกเนติก, และคลื่นในฟิสิกส์.</p>
+        <div class="video-container">
+            <h3>ฟิสิกส์เบื้องต้น: ไฟฟ้า</h3>
+            <iframe src="https://www.youtube.com/embed/lqm9HZEk5CQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- หัวข้อเคมี -->
+    <div class="container section">
+        <h2>เคมี</h2>
+        <p>เรียนรู้เกี่ยวกับการคำนวณปริมาณและปฏิกิริยาเคมีต่างๆ ที่สำคัญในระดับ ม.6.</p>
+        <div class="video-container">
+            <h3>เคมีเบื้องต้น: การคำนวณปริมาณ</h3>
+            <iframe src="https://www.youtube.com/embed/HBJ664ryYeU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- หัวข้อชีววิทยา -->
+    <div class="container section">
+        <h2>ชีววิทยา</h2>
+        <p>เรียนรู้เกี่ยวกับระบบร่างกายมนุษย์, พันธุศาสตร์ และโครงสร้างของสิ่งมีชีวิตที่ซับซ้อนมากขึ้น.</p>
+        <div class="video-container">
+            <h3>ชีววิทยา: ระบบร่างกายมนุษย์</h3>
+            <iframe src="https://www.youtube.com/embed/uSxxVc2ZQ8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- หัวข้อดาราศาสตร์ -->
+    <div class="container section">
+        <h2>ดาราศาสตร์</h2>
+        <p>เรียนรู้เกี่ยวกับจักรวาล, การเคลื่อนที่ของดาว และระบบสุริยะ.</p>
+        <div class="video-container">
+            <h3>ดาราศาสตร์: ระบบสุริยะ</h3>
+            <iframe src="https://www.youtube.com/embed/zZBMPzwGIFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    
+</body>
+</html>

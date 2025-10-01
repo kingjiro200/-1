@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลคณะนิติศาสตร์ มหาวิทยาลัยชั้นนำ</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(45deg, #ff4081, #ff80ab);
+            padding: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 64, 129, 0.9);
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(40, 40, 40, 0.9);
+            border-radius: 15px;
+        }
+        .university-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .details {
+            margin-top: 10px;
+            color: #bbb;
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #ff80ab;
+            font-size: 18px;
+            margin-top: 50px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #ff80ab;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .youtube-container {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        iframe {
+            width: 80%;
+            height: 300px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        ข้อมูลคณะนิติศาสตร์ มหาวิทยาลัยชั้นนำ
+    </div>
+
+    <div class="container">
+        <h2>คณะนิติศาสตร์ในมหาวิทยาลัยชั้นนำของประเทศไทย</h2>
+        <ul>
+            <li>
+                <div class="university-name">จุฬาลงกรณ์มหาวิทยาลัย</div>
+                <div class="details" id="details-j"> 
+                    - สาขานิติศาสตร์, กฎหมายระหว่างประเทศ<br>
+                    - การสมัคร: ใช้ผลการเรียน (GPA) และผลคะแนนสอบ (เช่น PAT1, PAT2)
+                </div>
+                <button class="button" onclick="toggleDetails('details-j')">ดูข้อมูลเพิ่มเติม</button>
+                <div class="youtube-container">
+                    <iframe src="https://www.youtube.com/embed/UuHXOhUgLI8?si=8ozmfdhxNheTh5aD" title="YouTube video"></iframe>
+                </div>
+            </li>
+            <li>
+                <div class="university-name">มหาวิทยาลัยธรรมศาสตร์</div>
+                <div class="details" id="details-tm">
+                    - สาขานิติศาสตร์, กฎหมายธุรกิจ<br>
+                    - การสมัคร: ใช้ผลการเรียน (GPA) และสอบกลางภาคของมหาวิทยาลัย
+                </div>
+                <button class="button" onclick="toggleDetails('details-tm')">ดูข้อมูลเพิ่มเติม</button>
+                <div class="youtube-container">
+                    <iframe src="https://www.youtube.com/embed/eRoTav0PT7I" title="YouTube video"></iframe>
+                </div>
+            </li>
+            <li>
+                <div class="university-name">มหาวิทยาลัยเกษตรศาสตร์</div>
+                <div class="details" id="details-kc">
+                    - สาขานิติศาสตร์, กฎหมายแพ่งและพาณิชย์<br>
+                    - การสมัคร: ใช้ผลการเรียน (GPA) และสอบเฉพาะทางของมหาวิทยาลัย
+                </div>
+                <button class="button" onclick="toggleDetails('details-kc')">ดูข้อมูลเพิ่มเติม</button>
+                <div class="youtube-container">
+                    <iframe src="https://www.youtube.com/embed/uKskyFabWFw" title="YouTube video"></iframe>
+                </div>
+            </li>
+            <li>
+                <div class="university-name">มหาวิทยาลัยเชียงใหม่</div>
+                <div class="details" id="details-cm">
+                    - สาขานิติศาสตร์, กฎหมายระหว่างประเทศ<br>
+                    - การสมัคร: ใช้ผลการเรียน (GPA) และสอบเฉพาะทาง
+                </div>
+                <button class="button" onclick="toggleDetails('details-cm')">ดูข้อมูลเพิ่มเติม</button>
+                <div class="youtube-container">
+                    <iframe src="https://www.youtube.com/embed/8Zv9Vu_PhEk" title="YouTube video"></iframe>
+                </div>
+            </li>
+            <li>
+                <div class="university-name">มหาวิทยาลัยขอนแก่น</div>
+                <div class="details" id="details-kku">
+                    - สาขานิติศาสตร์, กฎหมายปกครอง<br>
+                    - การสมัคร: ใช้ผลการเรียน (GPA) และคะแนนสอบ PAT1, PAT2
+                </div>
+                <button class="button" onclick="toggleDetails('details-kku')">ดูข้อมูลเพิ่มเติม</button>
+                <div class="youtube-container">
+                    <iframe src="https://www.youtube.com/embed/wxulsSLlW64" title="YouTube video"></iframe>
+                </div>
+            </li>
+            <li>
+                <div class="university-name">มหาวิทยาลัยมหิดล</div>
+                <div class="details" id="details-mahidol">
+                    - สาขานิติศาสตร์, กฎหมายธุรกิจและระหว่างประเทศ<br>
+                    - การสมัคร: ใช้ผลการเรียน (GPA) และสอบ PAT1, PAT2
+                </div>
+                <button class="button" onclick="toggleDetails('details-mahidol')">ดูข้อมูลเพิ่มเติม</button>
+                <div class="youtube-container">
+                    <p style="text-align: center; color: #ff80ab;">ตอนนี้ยังไม่มีคลิปแนะนำ เนื่องจากเพิ่งเปิดคณะนี้เป็นปีแรก ขออภัยในความไม่สะดวก</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+   
+
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

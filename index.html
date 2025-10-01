@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บช่วยเรียน</title>
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+           
+
+          
+         
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c, #000000); /* โทนดำไล่สี */
+    color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+
+
+        }
+
+        .header {
+            background: linear-gradient(45deg, #060304, #d8c6e0);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+        }
+        .k {
+            background: linear-gradient(45deg, #e5c4d1, #000000);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+
+        }  
+
+        .sub-topic-container {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes glowingText {
+            0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #483648, 0 0 20px #4a384a, 0 0 25px #463346, 0 0 30px #ff00ff, 0 0 35px #ff00ff; }
+            50% { text-shadow: 0 0 5px #ffffff, 0 0 10px #543f54, 0 0 15px #4e3c4e, 0 0 20px #ffffff, 0 0 25px #ffffff, 0 0 30px #ff00ff, 0 0 35px #ff00ff; }
+            100% { text-shadow: 0 0 5px #2b232b, 0 0 10px #2e272e, 0 0 15px #322632, 0 0 20px #ffffff, 0 0 25px #3b2d3b, 0 0 30px #ff00ff, 0 0 35px #ff00ff; }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(44, 44, 44, 0.9);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+            text-align: left;
+        }
+h2 {
+            color: #A8E6CF;
+            margin-bottom: 10px;
+        }
+
+.intro-text {
+            color: #E0E0E0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+.intro-text strong {
+    color: #F8F9FA;
+}
+
+.btn-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+            display: inline-block;
+            background: #C2185B;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #E91E63;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+        }
+        /* หัวข้อที่เรียน */
+        .extra-section {
+            text-align: center;
+            background: rgba(51, 51, 51, 0.9);
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(168, 230, 207, 0.4);
+            width: 100%;
+        }
+
+        .extra-section h2 {
+            color: #A8E6CF;
+            text-shadow: 0 0 10px rgba(168, 230, 207, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .topics {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .topics a {
+            display: inline-block;
+            background: #C2185B;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            margin-top: 10px;
+        }
+
+        .topics a:hover {
+            background: #2E7D32;
+            box-shadow: 0 0 20px rgba(168, 230, 207, 0.7);
+        }
+
+        /* แบบฝึกหัด */
+        .exercises-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: rgba(44, 44, 44, 0.9);
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+            width: 100%;
+            text-align: center;
+        }
+
+        .exercises-section h2 {
+            color: #A8E6CF;
+            text-shadow: 0 0 10px rgba(168, 230, 207, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .exercises-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .exercises-buttons a {
+            display: inline-block;
+            background: #388E3C;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(168, 230, 207, 0.5);
+        }
+
+        .exercises-buttons a:hover {
+            background: #2E7D32;
+            box-shadow: 0 0 20px rgba(168, 230, 207, 0.7);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #388E3C;
+            color: white;
+            font-size: 18px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 0 20px rgba(168, 230, 207, 0.5);
+            width: 100%;
+        }
+
+        /* ส่วนของ Portfolio */
+        .portfolio-section {
+            max-width: 900px;
+            width: 100%;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .portfolio-section h2 {
+            color: #A8E6CF;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-images {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .portfolio-slide img {
+            width: 300px;
+            height: 200px;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto ;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+        }
+
+        .portfolio-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(234, 0, 255);
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .portfolio-prev {
+            left: 10px;
+        }
+
+        .portfolio-next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        เว็บช่วยเรียน - โดย (KING)
+    </div>
+
+    <div class="container">
+        <div class="k">
+            <h2>หาเป้าหมายเพื่อมุ้งสู่อนาคต</h2>
+        </div>
+
+
+
+        <div class="card">
+            <h2>วิศวกรรมศาสตร์</h2>
+            <p class="intro-text">🚀 หากคุณหลงใหลในเทคโนโลยีและการสร้างสิ่งใหม่ๆ วิศวกรรมศาสตร์อาจเป็นทางเลือกที่ยอดเยี่ยมสำหรับคุณ...</p>
+            <a href="learn.html" class="btn">วิศวกรรมศาสตร์</a>
+        </div>
+
+        <div class="card">
+            <h2>บริหารธุรกิจ</h2>
+            <p class="intro-text">🚀 หากคุณสนใจในการบริหารจัดการและการตัดสินใจในโลกธุรกิจ การศึกษาบริหารธุรกิจจะเปิดโอกาสให้คุณ...</p>
+            <a href="B.html" class="btn">บริหารธุรกิจ</a>
+        </div>
+
+        <div class="card">
+            <h2>เภสัชศาสตร์</h2>
+            <p class="intro-text">🚀 ถ้าคุณมีความสนใจในเรื่องของยาและการรักษาเพื่อสุขภาพ การศึกษาด้านเภสัชศาสตร์จะช่วยให้คุณ...</p>
+            <a href="p.html" class="btn">เภสัชศาสตร์</a>
+        </div>
+
+        <div class="card">
+            <h2>นิติศาสตร์</h2>
+            <p class="intro-text">🚀 หากคุณสนใจการศึกษาเกี่ยวกับกฎหมายและความยุติธรรม การศึกษาด้านนิติศาสตร์จะช่วยให้คุณ...</p>
+            <a href="n.html" class="btn">กฎหมาย</a>
+        </div>
+
+        <div class="card">
+            <h2>แพทยศาสตร์</h2>
+            <p class="intro-text">🚀 สำหรับผู้ที่ต้องการช่วยเหลือและดูแลผู้อื่น การศึกษาด้านแพทยศาสตร์เป็นทางเลือกที่ดีเยี่ยม...</p>
+            <a href="pc.html" class="btn">แพทยศาสตร์</a>
+        </div>
+    </div>
+</body>
+</html>
+
+    
+    
+    <!-- Portfolio Section -->
+    <div class="portfolio-section">
+        <div class="k">
+            <h2>ตัวอย่าง 🎨 Portfolio</h2>
+
+
+            </div>
+            <div class="portfolio-section">
+        <div class="portfolio-images">
+            <div class="portfolio-slide" id="portfolioSlide">
+                <img src="images/Screenshot 2025-04-04 200610.png" alt="Image 1">
+                <img src="images/Screenshot 2025-04-04 195300.png" alt="Image 2">
+                <img src="images/Screenshot 2025-04-04 195723.png" alt="Image 3">
+                <img src="images/Screenshot 2025-04-04 195858.png" alt="Image 4">
+                <img src="images/Screenshot 2025-04-04 200734.png" alt="Image 5">
+            </div>
+            <div class="portfolio-nav portfolio-prev" onclick="movePortfolioSlide(-1)">&#10094;</div>
+            <div class="portfolio-nav portfolio-next" onclick="movePortfolioSlide(1)">&#10095;</div>
+        </div>
+    </div>
+    <!-- หัวข้อที่เรียน -->
+    <div class="container">
+        <div class="container">
+            <div class="k">
+                <h2>📚 หัวข้อที่คุณสามารถเรียนรู้</h2>
+             </div>
+            <div class=".sub-topic-co">
+            
+     
+            </div>
+            <div class="card">
+                <h2>📖คณิตศาสตร์</h2>
+                <p class="intro-text">ทุกปัญหาคือปริศนา และคณิตศาสตร์คือกุญแจไขคำตอบ</p>
+                <a href="math.html" class="btn">เริ่มเรียนรู้</a>
+            </div>
+           
+            <div class="card">
+                <h2>🧪 วิทยาศาสตร์</h2>
+                <p class="intro-text">อยากเปลี่ยนโลก? เริ่มจากการเข้าใจมันผ่านวิทยาศาสตร์</p>
+                <a href="science.html" class="btn">เริ่มเรียนรู้</a>
+            </div>
+            <div class="card">
+                <h2>💻 การเขียนโปรแกรม</h2>
+                <p class="intro-text">โปรแกรมเมอร์ไม่ใช่แค่คนเขียนโค้ด แต่คือผู้สร้างอนาคต</p>
+                <a href="coding.html" class="btn">เริ่มเรียนรู้</a>
+            </div>
+            <div class="card">
+                <h2>🌍 ภาษาอังกฤษ</h2>
+                <p class="intro-text">ภาษาอังกฤษไม่ใช่แค่ภาษาต่างประเทศ แต่มันคือกุญแจสู่โอกาสไร้ขีดจำกัด</p>
+                <a href="english.html" class="btn">เริ่มเรียนรู้</a>
+            </div>
+        
+        </div>
+    </div>
+
+    <!-- แบบฝึกหัด -->
+    <div class="container">
+
+        <div class="k">
+            <h2>📝 แบบฝึกหัดที่คุณสามารถทำได้</h2>
+           
+           
+        </div>
+        <div class=".sub-topic-co">
+           
+            <p class="intro-text"></p>
+           
+        </div>
+        
+        <div class="container">
+
+            <div class="card">
+                <div class="card">
+                <h2>แบบฝึกหัด📖คณิตศาสตร์</h2>
+              
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJE5zUzm0jC7wi0V5otsJEhzyBKddRDXfqKFRFpunnTOSVCA/viewform?usp=dialog" class="btn">เริ่มทำ ของ ม.4</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRsc5nEeXcRQIZTv8jri-zQcCCdCTWkZ2a69q-Ms5rMPaocA/viewform?usp=header" class="btn">เริ่มทำ ของ ม.5</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSegBpgG9bj1dSwdQER-08amDzY7zHKfaBHqnzCYxoqNH4yC1A/viewform?usp=header" class="btn">เริ่มทำ ของ ม.6</a>
+
+            </div>
+            <div class="card">
+                <h2>แบบฝึกหัด🧪 วิทยาศาสตร์</h2>
+              
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScyJUZou6XpwhbwZ8oRFMgnc3nmaDDOb_pWmwiOp4OEeXUqQw/viewform?usp=header" class="btn">เริ่มทำ ของ ม.4</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSccRVkiGMrY7C3-mQYc4gX2a3v92go98xxl7xbMZeFpdf6RYA/viewform?usp=header" class="btn">เริ่มทำ ของ ม.5</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWi1ft6-lJCjnP9YytdJH4xvzzRNH8Sj1Dk-NZNwEjE3j3Xw/viewform?usp=header" class="btn">เริ่มทำ ของ ม.6</a>
+
+            </div>
+            <div class="card">
+                <h2>แบบฝึกหัด💻 การเขียนโปรแกรม</h2>
+            
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfppYVhjLJtISTbihl4TJLBUWzDVZyFqQ3ER091I7-Q6unp4w/viewform?usp=header" class="btn">เริ่มทำ ของ Python</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWOLKufiCujRgnTqTcoa9jLCltquIendR7SAAnR9ILRHrE_g/viewform?usp=header" class="btn">เริ่มทำ ของ Html</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSevH-FcOoc3XpPGRXLd8KHqA9aS8yvz_nYYqUwowwyhI1_shg/viewform?usp=header" class="btn">เริ่มทำ ของ C</a>
+
+            </div>
+            
+            <div class="card">
+                <h2>แบบฝึกหัด🌍 ภาษาอังกฤษ</h2>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEXB5PaZWWseQV0c3yoP39v0cituYKIWRYorDN3SixCyqaYA/viewform?usp=header" class="btn">เริ่มทำ ของ ม.4</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXrCsb5qPMvp1sVCt_92X8Z62EarvwswmaJbsyveFqeNwpug/viewform?usp=header" class="btn">เริ่มทำ ของ ม.5</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKETT4elZZSi8B101nC5FO7hfPtJh2kp2s2txvh1pzBU7U5A/viewform?usp=header" class="btn">เริ่มทำ ของ ม.6</a>
+
+            </div>
+            
+        </div>
+    </div>
+
+
+  
+    <script>
+      document.querySelectorAll(".portfolio-slide img").forEach((img, index) => {
+    const links = [
+        "https://drive.google.com/file/d/1VSG-WzzlesBpfQZ50j6Ufwsubx7Dzm9t/view?usp=sharing",
+        "https://drive.google.com/file/d/1fhMIOCyx9Ovkn8nbmfr9XF4_htr68tPE/view?usp=sharing",
+        "https://drive.google.com/file/d/17z6eJ7JHkDyyHKBtAkx3LTdwvnSTOPBa/view?usp=sharing",
+        "https://drive.google.com/file/d/1PEni6DAzaGkwKbmn4pRaQc0u_-ypIv8W/view?usp=sharing",
+        "https://drive.google.com/file/d/1ZUsJLgpnWUZGt-ubquWEj5BsdNGCFBAY/view?usp=sharing"
+    ];
+
+    img.addEventListener("click", () => {
+        window.location.href = links[index]; 
+    });
+});
+
+let portfolioIndex = 0;
+const portfolioSlide = document.getElementById('portfolioSlide');
+const totalImages = portfolioSlide.children.length;
+
+function movePortfolioSlide(direction) {
+    portfolioIndex = (portfolioIndex + direction + totalImages) % totalImages;
+    portfolioSlide.style.transform = `translateX(-${portfolioIndex * 320}px)`; // 320px คือขนาดของแต่ละภาพรวม margin
+}
+
+    </script>
+
+</body>
+</html>
